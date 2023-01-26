@@ -1,5 +1,10 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchContacts, AddContact, deleteContact, logout } from './operations';
+import {
+  fetchContacts,
+  addContact,
+  deleteContact,
+  logout,
+} from 'redux/thunks/operationsThunk.js';
 
 const itemsSlice = createSlice({
   name: 'items',
@@ -18,14 +23,14 @@ const itemsSlice = createSlice({
     [fetchContacts.rejected](state) {
       state.isLoading = false;
     },
-    [AddContact.pending](state) {
+    [addContact.pending](state) {
       state.isLoading = true;
     },
-    [AddContact.fulfilled](state, action) {
+    [addContact.fulfilled](state, action) {
       state.contacts.unshift(action.payload);
       state.isLoading = false;
     },
-    [AddContact.rejected](state) {
+    [addContact.rejected](state) {
       state.isLoading = false;
     },
     [deleteContact.pending](state) {
