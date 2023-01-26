@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { deleteContact, fetchContacts } from 'redux/thunks/operationsThunk';
 import s from './ContactTable.module.css';
 
-const ContactTable = () => {
+export const ContactTable = () => {
   const dispatch = useDispatch();
   const contacts = useSelector(state => state.items.contacts);
   const filter = useSelector(state => state.filter);
@@ -49,5 +49,3 @@ const ContactTable = () => {
     </>
   );
 };
-
-export default ContactTable;
