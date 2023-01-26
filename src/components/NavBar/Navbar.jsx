@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux';
 import { UserMenu } from 'components/UserMenu/UserMenu';
 import s from './NavBar.module.css';
 
-export const AppBar = () => {
+export const NavBar = () => {
   const isAuth = useSelector(state => state.auth.isAuth);
 
   return (

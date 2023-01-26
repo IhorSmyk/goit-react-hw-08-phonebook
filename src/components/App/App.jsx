@@ -2,8 +2,8 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Routes, Route } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { getUser } from 'redux/operations';
-import { AppBar } from './AppBar/AppBar';
+import { getUser } from 'redux/thunks/operationsThunk';
+import { NavBar } from 'components/NavBar/Navbar';
 import { Register } from './Register/Register';
 import { Login } from './Login/Login';
 import { Contacts } from './Contacts/Contacts';
@@ -18,12 +18,9 @@ export const App = () => {
 
   return (
     <div>
-      <AppBar />
+      <NavBar />
       <Routes>
-        <Route
-          path="/"
-          element={<div className={s.title}>Welcome to our phonebook!</div>}
-        />
+        <Route path="/" element={<div className={s.title}>Phonebook</div>} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
         <Route path="/contacts" element={<Contacts />} />

@@ -1,18 +1,19 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import {
-  deleteContactThunk,
-  getContactsThunk,
-} from 'redux/thunks/contactsThunk';
-import { selectFilteredContacts } from 'redux/contacts/selectors';
+import { deleteContact, fetchContacts } from 'redux/thunks/operationsThunk';
 import s from './ContactTable.module.css';
 
 const ContactTable = () => {
   const dispatch = useDispatch();
-  const filteredContacts = useSelector(selectFilteredContacts);
+  const contacts = useSelector(state => state.items.contacts);
+  const filter = useSelector(state => state.filter);
+
+  const filteredContacts = contacts.filter(item =>
+    item.name.toLowerCase().includes(filter).toLowerCase()
+  );
 
   useEffect(() => {
-    dispatch(getContactsThunk());
+    dispatch(fetchContacts());
   }, [dispatch]);
 
   return (
@@ -35,7 +36,7 @@ const ContactTable = () => {
                   <td>{name} </td>
                   <td>{number}</td>
                   <td>
-                    <button onClick={() => dispatch(deleteContactThunk(id))}>
+                    <button onClick={() => dispatch(deleteContact(id))}>
                       delete
                     </button>
                   </td>
