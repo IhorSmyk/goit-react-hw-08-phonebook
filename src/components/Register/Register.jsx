@@ -37,49 +37,47 @@ export const Register = () => {
 
   if (!isAuth) {
     return (
-      <div className={s.section}>
-        <form onSubmit={formSubmit} className={s.form}>
-          <label className={s.label}>
-            Username
-            <input
-              type="text"
-              name="name"
-              pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-              title="Name may contain only letters, apostrophe, dash and spaces.
+      <form onSubmit={formSubmit} className={s.form}>
+        <label className={s.label}>
+          Username
+          <input
+            type="text"
+            name="name"
+            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
+            title="Name may contain only letters, apostrophe, dash and spaces.
                     For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
-              required
-              value={name}
-              onChange={inputOperator}
-              className={s.input}
-            />
-          </label>
-          <label className={s.label}>
-            Email
-            <input
-              type="email"
-              name="email"
-              required
-              value={email}
-              onChange={inputOperator}
-              className={s.input}
-            />
-          </label>
-          <label className={s.label}>
-            Password
-            <input
-              type="password"
-              name="password"
-              required
-              value={password}
-              onChange={inputOperator}
-              className={s.input}
-            />
-          </label>
-          <button type="submit" className={s.button}>
-            Register
-          </button>
-        </form>
-      </div>
+            required
+            value={name}
+            onChange={inputOperator}
+            className={s.input}
+          />
+        </label>
+        <label className={s.label}>
+          Email
+          <input
+            type="email"
+            name="email"
+            required
+            value={email}
+            onChange={inputOperator}
+            className={s.input}
+          />
+        </label>
+        <label className={s.label}>
+          Password
+          <input
+            type="password"
+            name="password"
+            required
+            value={password}
+            onChange={inputOperator}
+            className={s.input}
+          />
+        </label>
+        <button type="submit" className={s.button}>
+          Register
+        </button>
+      </form>
     );
   } else {
     return <Navigate to="/contacts" replace={true} />;

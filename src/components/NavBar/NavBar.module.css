@@ -4,10 +4,16 @@
   justify-content: space-around;
 }
 
+.navWrapper {
+  display: flex;
+}
+
 .home,
 .link {
   text-decoration: none;
-}
-
-.navWrapper {
+  padding: 10px;
+  margin: 2px;
+  border: 1px solid #202020;
+  border-radius: 3px;
+  color: #202020;
 }
