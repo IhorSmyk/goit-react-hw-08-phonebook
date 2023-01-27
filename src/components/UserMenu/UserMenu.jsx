@@ -3,16 +3,16 @@ import { logout } from 'redux/thunks/operations';
 import s from './UserMenu.module.css';
 
 export const UserMenu = () => {
-  const email = useSelector(state => state.auth.email);
+  const name = useSelector(state => state.auth.name);
   const dispatch = useDispatch();
 
   return (
-    <div className={s.userMenu}>
-      <p className={s.userEmail}>{email}</p>
+    <div className={s.menu}>
+      <p className={s.name}>{name}</p>
       <button
         type="button"
         onClick={() => dispatch(logout())}
-        className={s.link}
+        className={s.btn}
       >
         Sign Out
       </button>

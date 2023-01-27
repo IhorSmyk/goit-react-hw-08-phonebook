@@ -14,7 +14,6 @@ import s from './App.module.css';
 export const App = () => {
   const isLoadingAuth = useSelector(state => state.auth.isLoading);
   const isLoadingContacts = useSelector(state => state.items.isLoading);
-
   const dispatch = useDispatch();
   useEffect(() => {
     dispatch(getUser());
