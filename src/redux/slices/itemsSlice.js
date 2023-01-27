@@ -4,7 +4,7 @@ import {
   addContact,
   deleteContact,
   logout,
-} from 'redux/thunks/operationsThunk.js';
+} from 'redux/thunks/operations.js';
 
 const itemsSlice = createSlice({
   name: 'items',
@@ -12,49 +12,48 @@ const itemsSlice = createSlice({
     contacts: [],
     isLoading: false,
   },
-  extraReducers: {
-    [fetchContacts.pending](state) {
-      state.isLoading = true;
-    },
-    [fetchContacts.fulfilled](state, action) {
-      state.isLoading = false;
-      state.contacts = action.payload;
-    },
-    [fetchContacts.rejected](state) {
-      state.isLoading = false;
-    },
-    [addContact.pending](state) {
-      state.isLoading = true;
-    },
-    [addContact.fulfilled](state, action) {
-      state.contacts.unshift(action.payload);
-      state.isLoading = false;
-    },
-    [addContact.rejected](state) {
-      state.isLoading = false;
-    },
-    [deleteContact.pending](state) {
-      state.isLoading = true;
-    },
-    [deleteContact.fulfilled](state, action) {
-      state.contacts = state.contacts.filter(
-        contact => contact.id !== action.payload
-      );
-      state.isLoading = false;
-    },
-    [deleteContact.rejected](state) {
-      state.isLoading = false;
-    },
-    [logout.pending](state) {
-      state.isLoading = true;
-    },
-    [logout.fulfilled](state) {
-      state.contacts = [];
-      state.isLoading = false;
-    },
-    [logout.rejected](state) {
-      state.isLoading = false;
-    },
+  extraReducers: builder => {
+    builder
+      .addCase(fetchContacts.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(fetchContacts.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.contacts = action.payload;
+      })
+      .addCase(fetchContacts.rejected, state => {
+        state.isLoading = false;
+      })
+      .addCase(addContact.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(addContact.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.contacts.unshift(action.payload);
+      })
+      .addCase(addContact.rejected, state => {
+        state.isLoading = false;
+      })
+      .addCase(deleteContact.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(deleteContact.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.contacts = state.contacts.filter(el => el.id !== action.payload);
+      })
+      .addCase(deleteContact.rejected, state => {
+        state.isLoading = false;
+      })
+      .addCase(logout.pending, state => {
+        state.isLoading = true;
+      })
+      .addCase(logout.fulfilled, state => {
+        state.contacts = [];
+        state.isLoading = false;
+      })
+      .addCase(logout.rejected, state => {
+        state.isLoading = false;
+      });
   },
 });
 

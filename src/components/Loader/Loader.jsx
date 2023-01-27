@@ -1,18 +1,19 @@
-import { FidgetSpinner } from 'react-loader-spinner';
+import { Triangle } from 'react-loader-spinner';
 import s from './Loader.module.css';
 
 export const Loader = () => {
   return (
     <div className={s.overlay}>
-      <FidgetSpinner
-        visible={true}
+      <Triangle
         height="80"
         width="80"
-        ariaLabel="dna-loading"
-        wrapperClass="dna-wrapper"
-        ballColors={['#bfffc7', '#555555', '#e5e5e5']}
-        backgroundColor="#18a5a7"
+        color="#202020"
+        ariaLabel="triangle-loading"
+        wrapperStyle={{}}
+        wrapperClassName=""
+        visible={true}
       />
     </div>
   );
 };
+

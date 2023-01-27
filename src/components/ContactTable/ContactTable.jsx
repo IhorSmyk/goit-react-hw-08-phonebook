@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { deleteContact, fetchContacts } from 'redux/thunks/operationsThunk';
+import { deleteContact, fetchContacts } from 'redux/thunks/operations';
 import s from './ContactTable.module.css';
 
 export const ContactTable = () => {

@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { login } from 'redux/thunks/operationsThunk';
+import { login } from 'redux/thunks/operations';
 import s from './Login.module.css';
 
 export const Login = () => {
@@ -21,8 +21,8 @@ export const Login = () => {
       default:
         throw new Error('Unexpected value');
     }
-    };
-    
+  };
+
   const formSubmit = e => {
     e.preventDefault();
     dispatch(login({ email, password }));

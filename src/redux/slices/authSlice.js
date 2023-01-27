@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { getUser, register, login, logout } from 'redux/thunks/operationsThunk';
+import { getUser, register, login, logout } from 'redux/thunks/operations';
 
 const authSlice = createSlice({
   name: 'auth',
@@ -44,11 +44,11 @@ const authSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(login.fulfilled, (state, action) => {
+        state.isLoading = false;
+        state.isAuth = true;
         state.name = action.payload.user.name;
         state.email = action.payload.user.email;
         state.token = action.payload.token;
-        state.isAuth = true;
-        state.isLoading = false;
       })
       .addCase(login.rejected, state => {
         state.isLoading = false;
@@ -57,11 +57,11 @@ const authSlice = createSlice({
         state.isLoading = true;
       })
       .addCase(logout.fulfilled, state => {
+        state.isLoading = false;
+        state.isAuth = false;
         state.name = '';
         state.email = '';
         state.token = '';
-        state.isAuth = false;
-        state.isLoading = false;
       })
       .addCase(logout.rejected, state => {
         state.isLoading = false;

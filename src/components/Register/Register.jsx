@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Navigate } from 'react-router-dom';
-import { register } from 'redux/thunks/operationsThunk';
+import { register } from 'redux/thunks/operations';
 import s from './Register.module.css';
 
 export const Register = () => {

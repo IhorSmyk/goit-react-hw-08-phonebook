@@ -16,7 +16,6 @@ export const Filter = () => {
         type="text"
         name="name"
         placeholder="Search contact"
-        pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
         onChange={handleChangeFilter}
         value={filter}
       />

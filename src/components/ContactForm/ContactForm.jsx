@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Notify } from 'notiflix';
-import { addContact } from 'redux/thunks/operationsThunk';
+import { addContact } from 'redux/thunks/operations';
+import { toast } from 'react-toastify';
 import s from './ContactForm.module.css';
 
 export const ContactForm = () => {
@@ -29,7 +29,7 @@ export const ContactForm = () => {
       ({ name: currentName }) =>
         currentName.toLowerCase() === name.toLowerCase()
     )
-      ? Notify.info(`a contact with the name ${name} already exists`)
+      ? toast.info(`a contact with the name ${name} already exists`)
       : dispatch(addContact({ name, number }));
     setName('');
     setNumber('');

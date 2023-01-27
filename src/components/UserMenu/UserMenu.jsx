@@ -1,5 +1,5 @@
 import { useSelector, useDispatch } from 'react-redux';
-import { logout } from 'redux/thunks/operationsThunk';
+import { logout } from 'redux/thunks/operations';
 import s from './UserMenu.module.css';
 
 export const UserMenu = () => {
