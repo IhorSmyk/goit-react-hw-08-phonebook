@@ -9,7 +9,7 @@ export const ContactTable = () => {
   const filter = useSelector(state => state.filter);
 
   const filteredContacts = contacts.filter(item =>
-    item.name.toLowerCase().includes(filter).toLowerCase()
+    item.name.toLowerCase().includes(filter)
   );
 
   useEffect(() => {

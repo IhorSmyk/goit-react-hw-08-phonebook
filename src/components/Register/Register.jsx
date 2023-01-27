@@ -58,7 +58,6 @@ export const Register = () => {
             <input
               type="email"
               name="email"
-              pattern=" [^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+ "
               required
               value={email}
               onChange={inputOperator}
@@ -70,7 +69,6 @@ export const Register = () => {
             <input
               type="password"
               name="password"
-              pattern=" ^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$ "
               required
               value={password}
               onChange={inputOperator}

@@ -33,7 +33,7 @@ export const register = createAsyncThunk(
       return response.data;
     } catch (err) {
       toast.error(
-        `password (${password}) is shorter than the minimum allowed length (7)`
+        `password (${password}) is shorter than the minimum allowed length (8)`
       );
       return thunkAPI.rejectWithValue(err.message);
     }

@@ -9,7 +9,7 @@ export const NavBar = () => {
   return (
     <header className={s.header}>
       <Link to="/" className={s.title}>
-        &#9990;
+        Home
       </Link>
       <div className={s.navWrapper}>
         {!isAuth && (
