@@ -8,11 +8,11 @@ export const Contacts = () => {
   const isAuth = useSelector(state => state.auth.isAuth);
   if (isAuth) {
     return (
-      <>
+      <div className={s.wrapper}>
         <ContactForm />
         <Filter />
         <ContactTable />
-      </>
+      </div>
     );
   } else {
     return <p className={s.message}>authorization is required!</p>;

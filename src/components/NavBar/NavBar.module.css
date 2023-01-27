@@ -1,0 +1,13 @@
+.header {
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.home,
+.link {
+  text-decoration: none;
+}
+
+.navWrapper {
+}

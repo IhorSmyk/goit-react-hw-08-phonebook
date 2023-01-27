@@ -8,7 +8,7 @@ export const NavBar = () => {
 
   return (
     <header className={s.header}>
-      <Link to="/" className={s.title}>
+      <Link to="/" className={s.home}>
         Home
       </Link>
       <div className={s.navWrapper}>
