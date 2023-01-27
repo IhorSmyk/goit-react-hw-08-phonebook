@@ -29,7 +29,7 @@ export const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="/contacts" element={<Contacts />} />
       </Routes>
-      <ToastContainer autoClose={2000} />
+      <ToastContainer autoClose={1000} />
     </div>
   );
 };
