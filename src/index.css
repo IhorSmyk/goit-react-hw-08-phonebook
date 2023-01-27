@@ -71,6 +71,7 @@ input {
   height: 30px;
   border: 1px solid #202020;
   border-radius: 3px;
+  outline: none;
 }
 
 table,
@@ -86,3 +87,4 @@ h2 {
   margin-top: 50px;
   margin-bottom: 20px;
 }
+
